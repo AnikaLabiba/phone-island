@@ -8,3 +8,8 @@
 #spinner{
     display: none;
 }
+#error{
+    background-color: rgb(245, 236, 236);
+    padding: 15px;
+   display: none;
+}
