@@ -9,6 +9,9 @@ const toggleSearchResult = displayStyle => {
 const showError = displayStyle => {
     document.getElementById('error-nullArray').style.display = displayStyle;
 }
+const showErrorEmptyInput = displayStyle => {
+    document.getElementById('error-emptyInput').style.display = displayStyle;
+}
 
 //taking search value
 const searchPhone = () => {
@@ -18,6 +21,7 @@ const searchPhone = () => {
     toggleSpinner('block')
     toggleSearchResult('none')
     showError('none')
+    showErrorEmptyInput('none')
     loadPhones(searchText)
     document.getElementById('search-field').value = ''
 }
@@ -32,7 +36,8 @@ const loadPhones = searchText => {
     }
     else {
         toggleSpinner('none')
-        showError('block')
+        showErrorEmptyInput('block')
+
     }
 }
 //displaying phones
