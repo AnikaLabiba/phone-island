@@ -85,10 +85,10 @@ const displayPhoneDetail = phone => {
     phoneDetails.textContent = ''
     const div = document.createElement('div')
     div.innerHTML = `
-           <div class="card mb-3 w-75 mx-auto mt-5" style="max-width: 540px;">
+           <div class="card mb-3 w-75 mx-auto mt-5" style="max-width: 900px;">
                 <div class="row g-0">
-                    <div class="col-md-5 col-12 pt-5 ps-3">
-                        <img src="${phone.image}" class="img-fluid rounded-start" alt="...">
+                    <div class="col-md-5 col-12 mx-auto my-auto ps-5">
+                        <img src="${phone.image}" class="img-fluid rounded-start w-75 mx-auto" alt="...">
                     </div>
                     <div class="col-md-7 col-12 pe-3">
                         <div class="card-body">

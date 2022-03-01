@@ -1,4 +1,4 @@
-
+/* common styles */
 body{
     background-color: rgba(181, 223, 231, 0.13);
 }
@@ -10,11 +10,15 @@ body{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     /* background-color: rgba(236, 242, 243, 0.22); */
 }
+.card img{
+    justify-content: center;
+align-items: center;
+}
 #spinner{
     display: none;
 }
 .error{
     background-color: rgb(245, 236, 236);
     padding: 15px;
-   display: none;
+    display: none;
 }
