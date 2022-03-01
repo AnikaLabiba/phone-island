@@ -9,40 +9,6 @@ const toggleSearchResult = displayStyle => {
 const showError = displayStyle => {
     document.getElementById('error-nullArray').style.display = displayStyle;
 }
-// //accessing main features
-const accessMainFeatures = features => {
-    //console.log(features.sensors)
-    const result = Object.values(features)
-
-    const resultProperty = `
-    <p class="card-text"><small class="text-muted">
-    <span class="fw-bold">Storage:</span> ${result[0]}<br>
-    <span class="fw-bold">Display size:</span> ${result[1]}<br>
-    <span class="fw-bold">Chipset:</span> ${result[2]}<br>
-    <span class="fw-bold">Memory:</span> ${result[3]}<br>
-    <span class="fw-bold">Sensors:</span> ${result[4] ? result[4] : 'not found'}</small>
-    </p>`
-
-    return resultProperty
-}
-//access others property
-const accessOthers = others => {
-    console.log(others)
-    const result = Object.values(others)
-
-    const resultProperty = `
-    <p class="card-text"><small class="text-muted">
-    <span class="fw-bold">WLAN:</span> ${result[0]}<br>
-    <span class="fw-bold">Bluetooth:</span> ${result[1]}<br>
-    <span class="fw-bold">GPS:</span> ${result[2]}<br>
-    <span class="fw-bold">NFC:</span> ${result[3]}<br>
-    <span class="fw-bold">Radio:</span> ${result[4]}<br>
-    <span class="fw-bold">USB:</span> ${result[5]}<br>
-    </small>
-    </p>`
-
-    return resultProperty
-}
 
 //taking search value
 const searchPhone = () => {
@@ -129,13 +95,32 @@ const displayPhoneDetail = phone => {
                             <h5 class="card-title">Name: ${phone.name}</h5>
                             <p class="card-text">Released on: ${phone.releaseDate ? phone.releaseDate : 'not found'}</p>
                             
-                            <h6>Main features: ${accessMainFeatures(phone.mainFeatures)}</h6>
-                           
-                             <h6>Others: ${accessOthers(phone.others ? phone.others : 'not found')} </h6>
+                            <h6>Main features:</h6>
+                            <p class="card-text text-muted">
+                               <span class="fw-bold">Storage:</span> ${phone.mainFeatures?.storage ? phone.mainFeatures.storage : 'not found'}<br>
+                               <span class="fw-bold">Display size:</span> ${phone.mainFeatures?.displaySize ? phone.mainFeatures.displaySize : 'not found'}<br>
+                               <span class="fw-bold">Chip Set:</span> ${phone.mainFeatures?.chipSet ? phone.mainFeatures.chipSet : 'not found'}<br>
+                               <span class="fw-bold">Memory:</span> ${phone.mainFeatures?.memory ? phone.mainFeatures.memory : 'not found'}<br>
+                               <span class="fw-bold">Sensors:</span> ${phone.mainFeatures?.sensors ? phone.mainFeatures.sensors : 'not found'}
+                            </p>
+
+                            <h6>Others:</h6>
+                            <p class="card-text text-muted">
+                               <span class="fw-bold">WLAN:</span> ${phone.others?.WLAN ? phone.others.WLAN : 'not found'}<br>
+                               <span class="fw-bold">Bluetooth:</span> ${phone.others?.Bluetooth ? phone.others.Bluetooth : 'not found'}<br>
+                               <span class="fw-bold">GPS:</span> ${phone.others?.GPS ? phone.others.GPS : 'not found'}<br>
+                               <span class="fw-bold">NFC:</span> ${phone.others?.NFC ? phone.others.NFC : 'not found'}<br>
+                               <span class="fw-bold">Radio:</span> ${phone.others?.Radio ? phone.others.Radio : 'not found'}<br>
+                               <span class="fw-bold">USB:</span> ${phone.others?.USB ? phone.others.USB : 'not found'}<br>
+                            </p>
+
+
+                            
                             
                         </div>
                     </div>
                 </div>
-            </div>`;
+            </div> `;
     phoneDetails.appendChild(div)
 }
+
