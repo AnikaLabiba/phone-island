@@ -46,11 +46,8 @@ const displayPhones = phones => {
         toggleSpinner('none')
     }
     else {
-
         phones.forEach(phone => {
-
             const div = document.createElement('col')
-
             div.innerHTML = `
                        <div class="col">
                             <div class="card">
@@ -58,7 +55,7 @@ const displayPhones = phones => {
                                 <div class="card-body">
                                     <h5 class="card-title">Name: ${phone.phone_name}</h5>
                                     <h6 class="card-text">Brand: ${phone.brand}</h6>
-                                    <a onclick="loadDetail('${phone.slug}')" href="#" class="btn btn-outline-primary px-5">Details</a>
+                                    <a onclick="loadDetail('${phone.slug}')" href="#" class="btn btn-outline-success px-5">Details</a>
                                 </div>
                             </div>
                         </div>
@@ -72,15 +69,14 @@ const displayPhones = phones => {
 }
 // loading phone details by id
 const loadDetail = id => {
-
     const url = `https://openapi.programming-hero.com/api/phone/${id}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayPhoneDetail(data.data))
 }
+
 //display phone details
 const displayPhoneDetail = phone => {
-    console.log(phone)
     const phoneDetails = document.getElementById('phone-details')
     phoneDetails.textContent = ''
     const div = document.createElement('div')
@@ -113,10 +109,6 @@ const displayPhoneDetail = phone => {
                                <span class="fw-bold">Radio:</span> ${phone.others?.Radio ? phone.others.Radio : 'not found'}<br>
                                <span class="fw-bold">USB:</span> ${phone.others?.USB ? phone.others.USB : 'not found'}<br>
                             </p>
-
-
-                            
-                            
                         </div>
                     </div>
                 </div>
