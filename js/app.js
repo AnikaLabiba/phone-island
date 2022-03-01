@@ -88,7 +88,7 @@ const displayPhones = phones => {
             div.innerHTML = `
                        <div class="col">
                             <div class="card">
-                                <img src="${phone.image}" class="card-img-top w-75 mx-auto" alt="...">
+                                <img src="${phone.image}" class="card-img-top w-75 mx-auto pt-3" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Name: ${phone.phone_name}</h5>
                                     <h6 class="card-text">Brand: ${phone.brand}</h6>
@@ -121,10 +121,10 @@ const displayPhoneDetail = phone => {
     div.innerHTML = `
            <div class="card mb-3 w-75 mx-auto mt-5" style="max-width: 540px;">
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-5 col-12 pt-5 ps-3">
                         <img src="${phone.image}" class="img-fluid rounded-start" alt="...">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-7 col-12 pe-3">
                         <div class="card-body">
                             <h5 class="card-title">Name: ${phone.name}</h5>
                             <p class="card-text">Released on: ${phone.releaseDate ? phone.releaseDate : 'not found'}</p>
